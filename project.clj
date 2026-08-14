@@ -8,10 +8,13 @@
   :plugins [[lein-ancient "1.0.0"]
             [jonase/eastwood "1.4.3"]
             [test2junit "1.4.4"]]
+  ;; Fail the build on a new dependency conflict rather than printing a
+  ;; warning nobody reads.
+  :pedantic? :abort
   :dependencies [[org.clojure/clojure "1.12.5"]
                  [org.clojure/tools.logging "1.3.1"]
                  [cheshire "6.2.0"]
                  [slingshot "0.12.2"]
                  [ch.qos.logback/logback-classic "1.5.18"]
-                 [org.slf4j/jcl-over-slf4j "2.0.18"]
+                 [org.slf4j/jcl-over-slf4j "2.0.17"]
                  [net.logstash.logback/logstash-logback-encoder "8.1"]])
