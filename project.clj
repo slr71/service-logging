@@ -11,6 +11,14 @@
   ;; Fail the build on a new dependency conflict rather than printing a
   ;; warning nobody reads.
   :pedantic? :abort
+  ;; The jackson-* artifacts must move together: mixing minors across
+  ;; core/databind/annotations surfaces as NoSuchMethodError at runtime rather
+  ;; than as a resolution failure, and :pedantic? cannot catch it because each
+  ;; artifact is individually unambiguous. cheshire 6.2.0 brings core/cbor/smile
+  ;; at 2.21.1 while logstash-logback-encoder brings databind 2.18.3, so databind
+  ;; and annotations are aligned to 2.21 to match.
+  :managed-dependencies [[com.fasterxml.jackson.core/jackson-annotations "2.21"]
+                         [com.fasterxml.jackson.core/jackson-databind "2.21.1"]]
   :dependencies [[org.clojure/clojure "1.12.5"]
                  [org.clojure/tools.logging "1.3.1"]
                  [cheshire "6.2.0"]
