@@ -5,10 +5,10 @@
             :url "http://iplantcollaborative.org/sites/default/files/iPLANT-LICENSE.txt"}
   :deploy-repositories [["releases" :clojars]
                         ["snapshots" :clojars]]
-  :plugins [[lein-ancient "0.7.0"]
+  :plugins [[lein-ancient "1.0.0"]
             [jonase/eastwood "1.4.3"]
             [test2junit "1.4.4"]]
-  :dependencies [[org.clojure/clojure "1.12.1"]
+  :dependencies [[org.clojure/clojure "1.12.5"]
                  [org.clojure/tools.logging "1.3.0"]
                  [cheshire "6.0.0"]
                  [slingshot "0.12.2"]
